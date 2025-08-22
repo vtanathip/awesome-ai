@@ -34,6 +34,8 @@ To install dependencies listed in `Pipfile`:
 pipenv install
 ```
 
+All dependencies will be installed **only inside the Pipenv-managed virtual environment**, keeping your global Python installation clean.
+
 To install a new package:
 
 ```sh
@@ -83,6 +85,30 @@ pipenv install <package-name>
   ```sh
   exit
   ```
+
+## Setting Up the Python Environment
+
+This project uses a `Pipfile` for dependency management. To activate and use the environment:
+
+1. Install pipenv if you haven't already:
+
+   ```sh
+   pip install pipenv
+   ```
+
+2. Activate the environment:
+
+   ```sh
+   pipenv shell
+   ```
+
+3. Install all dependencies:
+
+   ```sh
+   pipenv install
+   ```
+
+   > **Note:** All dependencies are installed only in the Pipenv virtual environment, not globally.
 
 ## References
 
