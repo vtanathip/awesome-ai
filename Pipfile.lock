@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "59562ce621fd68cbd9ce3e95f6a0608aa50beaf2ddd86881247be6f557e62ae9"
+            "sha256": "c199d7cca849b29690a4646e0772d78757bab568865e388be1ec5044091fe563"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.11"
+            "python_version": "3.13"
         },
         "sources": [
             {
@@ -260,11 +260,11 @@
         },
         "langsmith": {
             "hashes": [
-                "sha256:633719f9fdafe4297459b0ab442f536d6c0734b36c186ded67343d335e5ea0b3",
-                "sha256:c9a4ec4b7b0f5f70e7be204ee9c5b17db872cc3015cd04851e2703a0966b9ff1"
+                "sha256:9ba95ed09b057dfe227e882f5446e1824bfc9f2c89de542ee6f0f8d90ab953a7",
+                "sha256:a94f374c7fa0f406757f95f311e84873258563961e1af0ba8996411822cd7241"
             ],
             "markers": "python_version >= '3.9'",
-            "version": "==0.4.15"
+            "version": "==0.4.16"
         },
         "orjson": {
             "hashes": [
