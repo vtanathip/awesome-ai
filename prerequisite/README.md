@@ -1,64 +1,102 @@
-# Prerequisites Setup
+# Using Pipenv for Python Project Management
 
-This guide explains how to set up a Python development environment using **Pipenv** and configure **VSCode** for development.
+This guide explains what **Pipenv** is, how to install it, and how to use it to manage Python dependencies and virtual environments. It also covers how to configure **VSCode** to work with Pipenv.
 
-## 1. Install Pipenv
+## What is Pipenv?
 
-Make sure you have Python installed. Then install Pipenv:
+[Pipenv](https://pipenv.pypa.io/en/latest/) is a tool that simplifies dependency management and virtual environments for Python projects. It combines the features of `pip` and `virtualenv` into a single workflow, making it easier to manage project-specific packages and environments.
+
+## 1. How to Install Pipenv
+
+First, ensure you have Python (3.6 or newer) installed on your system.
+
+To install Pipenv globally, run:
 
 ```sh
 pip install pipenv
 ```
 
-## 2. Create and Activate Virtual Environment
+You can verify the installation with:
 
-Navigate to your project directory and run:
+```sh
+pipenv --version
+```
+
+## 2. Creating and Using a Pipenv Environment
+
+Navigate to your project directory in your terminal.
+
+To create a new Pipenv-managed environment and a `Pipfile`, run:
 
 ```sh
 pipenv install --dev
 ```
 
-This will create a `Pipfile` and a virtual environment.
+- This will create a virtual environment and a `Pipfile` for dependency tracking.
+- The `--dev` flag adds development dependencies.
 
-To activate the virtual environment:
+To activate the Pipenv environment:
 
 ```sh
 pipenv shell
 ```
 
-## 3. Install Project Dependencies
+This command spawns a new shell with the virtual environment activated.
 
-To install dependencies listed in `Pipfile`:
+## 3. Installing and Managing Dependencies
+
+To install all dependencies listed in the `Pipfile`:
 
 ```sh
 pipenv install
 ```
 
-All dependencies will be installed **only inside the Pipenv-managed virtual environment**, keeping your global Python installation clean.
-
-To install a new package:
+To add a new package to your project:
 
 ```sh
 pipenv install <package-name>
 ```
 
-## 4. Configure VSCode to Use Pipenv
+To add a development-only package:
 
-1. Open the project folder in VSCode.
+```sh
+pipenv install --dev <package-name>
+```
+
+All packages are installed inside the Pipenv-managed virtual environment, keeping your global Python installation clean.
+
+## 4. Running Python Scripts with Pipenv
+
+You can run Python scripts inside the Pipenv environment without activating the shell:
+
+```sh
+pipenv run python your_script.py
+```
+
+## 5. Checking Installed Packages
+
+To see a dependency graph of installed packages:
+
+```sh
+pipenv graph
+```
+
+## 6. Deactivating the Environment
+
+To exit the Pipenv shell, simply type:
+
+```sh
+exit
+```
+
+## 7. Configuring VSCode to Use Pipenv
+
+1. Open your project folder in VSCode.
 2. Press `Ctrl+Shift+P` and select **Python: Select Interpreter**.
-3. Choose the interpreter that points to your Pipenv environment. It usually appears as:
-
-   ```sh
-   .venv\Scripts\python.exe
-   ```
-
-   or
-
-   ```sh
-   pipenv (project-name)
-   ```
-
-4. If it does not appear, you can find the path by running:
+3. Choose the interpreter that points to your Pipenv environment. It may appear as:
+   - `pipenv (project-name)`
+   - Or as a path like `.venv\Scripts\python.exe`
+4. If you don't see it, find the environment path with:
 
    ```sh
    pipenv --venv
@@ -66,49 +104,16 @@ pipenv install <package-name>
 
    Then select the Python executable inside that folder.
 
-## 5. Useful Pipenv Commands
+## 8. Summary of Useful Pipenv Commands
 
-- Check installed packages:
-
-  ```sh
-  pipenv graph
-  ```
-
-- Run a script inside the environment:
-
-  ```sh
-  pipenv run python your_script.py
-  ```
-
-- Deactivate the environment:
-
-  ```sh
-  exit
-  ```
-
-## Setting Up the Python Environment
-
-This project uses a `Pipfile` for dependency management. To activate and use the environment:
-
-1. Install pipenv if you haven't already:
-
-   ```sh
-   pip install pipenv
-   ```
-
-2. Activate the environment:
-
-   ```sh
-   pipenv shell
-   ```
-
-3. Install all dependencies:
-
-   ```sh
-   pipenv install
-   ```
-
-   > **Note:** All dependencies are installed only in the Pipenv virtual environment, not globally.
+- **Install Pipenv:** `pip install pipenv`
+- **Create environment:** `pipenv install`
+- **Activate environment:** `pipenv shell`
+- **Install package:** `pipenv install <package>`
+- **Install dev package:** `pipenv install --dev <package>`
+- **Run script:** `pipenv run python your_script.py`
+- **Show dependencies:** `pipenv graph`
+- **Exit environment:** `exit`
 
 ## References
 
