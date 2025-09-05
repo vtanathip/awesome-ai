@@ -1,7 +1,7 @@
 # Import prompt templates
 from langchain.prompts import ChatPromptTemplate, HumanMessagePromptTemplate
 from langchain.schema import SystemMessage  # Import system message schema
-from langchain_openai import ChatOpenAI  # updated import for OpenAI chat model
+from langchain_ollama import ChatOllama  # updated import for OpenAI chat model
 from dotenv import load_dotenv  # Import dotenv to load environment variables
 
 # Specify custom environment file path
@@ -9,8 +9,8 @@ custom_env_path = 'environment/local.env'
 # Load environment variables from the specified file
 load_dotenv(dotenv_path=custom_env_path, override=True)
 
-# Initialize the OpenAI chat model with parameters
-llm = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=1)
+# Initialize the Ollama chat model with parameters
+llm = ChatOllama(model='llama3.2', temperature=0.1)
 
 prompt = ChatPromptTemplate(
     input_variables=["content"],  # Define input variable for the prompt
