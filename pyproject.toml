@@ -13,6 +13,7 @@ dependencies = [
     "langchain-chroma>=0.2.5",
     "langchain-community>=0.3.29",
     "langchain-ollama>=0.3.7",
+    "langgraph>=0.6.7",
     "pandas>=2.3.2",
     "pypdf>=6.0.0",
 ]
